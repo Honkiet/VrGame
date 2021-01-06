@@ -1642,7 +1642,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  speed: 1
+  speed: 7
   rigSpeed: 0
   target: {fileID: 589260755}
   additionalHeight: 0.2
