@@ -6,33 +6,49 @@ public class PointAreaBehaivior : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
     [SerializeField] Transform area;
-    [SerializeField] Transform target;
+    private float target = 5;
 
     // Update is called once per frame
     void Update()
     {
-        MoveTowardsTarget(target);
+        MoveTowardsX(target);
     }
 
-    void MoveTowardsTarget(Transform target)
+    void MoveTowardsX(float ptarget)
     {
 
-        var offset = target.position.x - transform.position.x; // Is transform.position rght ?
+        var offset = ptarget - transform.position.x; // Is transform.position right ?
         //Get the difference.
-        if (offset > .1f) // as long as there is a diference greater than .1f do this
-        {
-            offset = 1 * speed;
-
-            area.position += new Vector3(offset * Time.deltaTime,0,0) ;
-
+        if (offset < .1f && offset > -0.1f) {// When target reached, pick a new target
+            target = PickRandomX();
+            return;
         }
 
-        else if (offset < -0.1f) // if x is negative
+        if (offset > .1)
+            {
+                offset = 1 * speed;
+
+            area.position += new Vector3(offset * Time.deltaTime, 0, 0);
+
+            }
+           else // if x is negative
         {
             offset = -1 * speed;
 
             area.position += new Vector3(offset * Time.deltaTime, 0, 0);
 
         }
+
+    }
+
+    float PickRandomX()
+    {
+        float x = Random.Range(-2f, 10);
+        return x;
+    }
+
+    void MakeAreaSmaller() //To Do: scale over time
+    {
+       // GetComponent<Transform>().localScale 
     }
 }
