@@ -51,4 +51,6 @@ public class PointAreaBehaivior : MonoBehaviour
     {
        // GetComponent<Transform>().localScale 
     }
+
+
 }
