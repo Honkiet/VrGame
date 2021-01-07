@@ -2,55 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointAreaBehaivior : MonoBehaviour
+namespace PointArea
 {
-    [SerializeField] float speed = 1f;
-    [SerializeField] Transform area;
-    private float target = 5;
-
-    // Update is called once per frame
-    void Update()
+    public class PointAreaBehaivior : MonoBehaviour
     {
-        MoveTowardsX(target);
-    }
+        [SerializeField] float speed = 1f;
+        [SerializeField] Transform area;
+        private float target = 5;
 
-    void MoveTowardsX(float ptarget)
-    {
-
-        var offset = ptarget - transform.position.x; // Is transform.position right ?
-        //Get the difference.
-        if (offset < .1f && offset > -0.1f) {// When target reached, pick a new target
-            target = PickRandomX();
-            return;
+        // Update is called once per frame
+        void Update()
+        {
+            MoveTowardsX(target);
         }
 
-        if (offset > .1)
+        void MoveTowardsX(float ptarget)
+        {
+
+            var offset = ptarget - transform.position.x; // Is transform.position right ?
+                                                         //Get the difference.
+            if (offset < .1f && offset > -0.1f)
+            {// When target reached, pick a new target
+                target = PickRandomX();
+                return;
+            }
+
+            if (offset > .1)
             {
                 offset = 1 * speed;
 
-            area.position += new Vector3(offset * Time.deltaTime, 0, 0);
+                area.position += new Vector3(offset * Time.deltaTime, 0, 0);
 
             }
-           else // if x is negative
-        {
-            offset = -1 * speed;
+            else // if x is negative
+            {
+                offset = -1 * speed;
 
-            area.position += new Vector3(offset * Time.deltaTime, 0, 0);
+                area.position += new Vector3(offset * Time.deltaTime, 0, 0);
+
+            }
 
         }
 
+        float PickRandomX()
+        {
+            float x = Random.Range(-1f, 9);
+            return x;
+        }
+
+        void MakeAreaSmaller() //To Do: scale over time
+        {
+            // GetComponent<Transform>().localScale 
+        }
+
+
     }
-
-    float PickRandomX()
-    {
-        float x = Random.Range(-2f, 10);
-        return x;
-    }
-
-    void MakeAreaSmaller() //To Do: scale over time
-    {
-       // GetComponent<Transform>().localScale 
-    }
-
-
 }

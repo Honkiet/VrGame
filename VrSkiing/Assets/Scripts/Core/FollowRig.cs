@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowRig : MonoBehaviour
+namespace Core
 {
-    // Start is called before the first frame update
-    [SerializeField] Transform target;
-
-    // Update is called once per frame
-    void LateUpdate()
+    public class FollowRig : MonoBehaviour
     {
-        transform.position = target.position;
+        // Start is called before the first frame update
+        [SerializeField] Transform target;
+
+        // Update is called once per frame
+        void LateUpdate()
+        {
+            transform.position = target.position;
+        }
     }
+
 }

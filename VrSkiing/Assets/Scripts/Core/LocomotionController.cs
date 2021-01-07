@@ -3,29 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class LocomotionController : MonoBehaviour
+namespace Core
 {
-    public XRController leftRay;
-    public XRController rightRay;
-    public InputHelpers.Button UiActivationButton;
-    public float activationThreshold = 0.1f;
-
-    // Update is called once per frame
-    void Update()
+    public class LocomotionController : MonoBehaviour
     {
-        if (leftRay)
+        public XRController leftRay;
+        public XRController rightRay;
+        public InputHelpers.Button UiActivationButton;
+        public float activationThreshold = 0.1f;
+
+        // Update is called once per frame
+        void Update()
         {
-            leftRay.gameObject.SetActive(CheckIfActivated(leftRay));
+            if (leftRay)
+            {
+                leftRay.gameObject.SetActive(CheckIfActivated(leftRay));
+            }
+            if (rightRay)
+            {
+                rightRay.gameObject.SetActive(CheckIfActivated(rightRay));
+            }
         }
-        if (rightRay)
+
+        public bool CheckIfActivated(XRController controller)
         {
-            rightRay.gameObject.SetActive(CheckIfActivated(rightRay));
+            InputHelpers.IsPressed(controller.inputDevice, UiActivationButton, out bool isActivated, activationThreshold);
+            return isActivated;
         }
     }
 
-    public bool CheckIfActivated(XRController controller)
-    {
-        InputHelpers.IsPressed(controller.inputDevice, UiActivationButton, out bool isActivated, activationThreshold);
-        return isActivated;
-    }
 }
