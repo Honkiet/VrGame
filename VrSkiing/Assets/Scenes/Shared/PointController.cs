@@ -9,12 +9,18 @@ namespace Points
     {
 
         [SerializeField] TextMeshProUGUI scoreText;
-        private int score;
+        public float score;
+        public float scorePerSecond;
 
-        public void AddScore(int x)
+        public void AddScore()
         {
-            score += x;
-            scoreText.text = "Points: " + score;
+            score += scorePerSecond * Time.deltaTime;
+            UpdateScoretext(); // might move into another script, but for now here is fine
+        }
+
+        private void UpdateScoretext() 
+        {
+            scoreText.text = "" + (int)score;
         }
     }
 

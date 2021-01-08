@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14956f8ece6f784ca8f16fe46547046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  score: {fileID: 0}
-  time: {fileID: 0}
-  timeRemaining: 10
+  scoreText: {fileID: 0}
+  score: 0
+  scorePerSecond: 5

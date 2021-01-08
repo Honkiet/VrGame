@@ -11,7 +11,13 @@ namespace PointArea
         [SerializeField] Transform area;
         private float target = 5;
         [SerializeField] GameObject pointController;
+        PointController points;
 
+        private void Start()
+        {
+            points = pointController.GetComponent<PointController>();
+
+        }
         // Update is called once per frame
         void Update()
         {
@@ -63,8 +69,10 @@ namespace PointArea
         private void OnTriggerStay(Collider other)
         {
             //Debug.Log("collision");
-            pointController.GetComponent<PointController>().AddScore(2);
+            points.AddScore();
         }
+
+
 
     }
 }
