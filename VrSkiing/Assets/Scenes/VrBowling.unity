@@ -613,7 +613,7 @@ TerrainCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876013402}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: aab157016ff0add4db9e6a04dba6f109, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &876013405
@@ -946,6 +946,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1804598196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2878025902193537356, guid: 602ef3d669c1ae24095998e0f13ccad0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2878025902905832543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1901482115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c035f0a73d90cac4c97009a63bfee22d,
@@ -957,6 +969,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2100358460539390986, guid: 275e977d0e256c840ac1bfea956ebdef,
     type: 3}
   m_PrefabInstance: {fileID: 2100358460286686057}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1976912192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5470945047792915657, guid: 91528155afe5881479572a5a99c9fc97,
+    type: 3}
+  m_PrefabInstance: {fileID: 656359679420839385}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008762497
 GameObject:
@@ -1066,6 +1084,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4477981439852568629, guid: 91528155afe5881479572a5a99c9fc97,
+        type: 3}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 1804598196}
     - target: {fileID: 5470945047792915657, guid: 91528155afe5881479572a5a99c9fc97,
         type: 3}
       propertyPath: m_Name
@@ -1139,6 +1162,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100358460539390986, guid: 275e977d0e256c840ac1bfea956ebdef,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2100358460539390988, guid: 275e977d0e256c840ac1bfea956ebdef,
         type: 3}
@@ -1386,6 +1414,11 @@ PrefabInstance:
       propertyPath: speed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8753881277844532393, guid: 6c2483d180d755a478e52010c5bf0821,
+        type: 3}
+      propertyPath: pointController
+      value: 
+      objectReference: {fileID: 1976912192}
     - target: {fileID: 8753881277844532394, guid: 6c2483d180d755a478e52010c5bf0821,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Points;
 
 namespace PointArea
 {
@@ -9,6 +10,7 @@ namespace PointArea
         [SerializeField] float speed = 1f;
         [SerializeField] Transform area;
         private float target = 5;
+        [SerializeField] GameObject pointController;
 
         // Update is called once per frame
         void Update()
@@ -55,6 +57,14 @@ namespace PointArea
             // GetComponent<Transform>().localScale 
         }
 
+        
+
+
+        private void OnTriggerStay(Collider other)
+        {
+            //Debug.Log("collision");
+            pointController.GetComponent<PointController>().AddScore(2);
+        }
 
     }
 }
